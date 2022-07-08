@@ -19,6 +19,25 @@ or individual libraries can be installed using
 
 ## Usage Example
 
+**Single LED:**
+
+```
+import is31fl3733
+
+led_num = 64
+pixels = is31fl3733.Helper(led_num, byteorder="RGB")
+pixels.brightness = 1.0 # range: 0-1.0
+
+pixels[0] = (0xff, 0xff, 0xff) # White
+pixels[1] = (0xff, 0, 0)       # Red
+pixels[2] = (0, 0xff, 0)       # Green
+pixels[3] = (0, 0, 0xff)       # Blue
+
+pixels.show()
+```
+
+**Use with adafruit_led_animation:**
+
 ```
 import is31fl3733
 from adafruit_led_animation.animation.blink import Blink
@@ -33,6 +52,8 @@ blink = Blink(pixels, 0.5, color.PURPLE)
 while True:
     blink.animate()
 ```
+
+Other examples: **[here](https://github.com/labrusca/is31fl3733_driver/tree/main/examples)**
 
 **Test on [M60 keyboard](https://circuitpython.org/board/makerdiary_m60_keyboard/)**
 

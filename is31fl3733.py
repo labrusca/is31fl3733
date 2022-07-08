@@ -388,6 +388,8 @@ class IS31FL3733:
             buffer[i] = 0x00
         self.onoff_pixels = buffer
 
+
+# Helper for Adafruit_CircuitPython_LED_Animation, and so on.
 class Helper(adafruit_pixelbuf.PixelBuf):
 
     driver = IS31FL3733()
