@@ -402,7 +402,7 @@ class Helper(adafruit_pixelbuf.PixelBuf):
 
 
     def fill(self, value):
-        for i in range(0,63):
+        for i in range(0,len(self)):
             self.driver.set_pwm_pixel(i, value)
         #self.led.update_pwm_pixels()
 
